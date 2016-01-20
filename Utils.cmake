@@ -14,9 +14,6 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
     set(PLATFORM_EXTENSION "OSX")
 endif()
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
 # Set up some sane defaults
 set(PROJECT_CMAKE_DIR ${PROJECT_SOURCE_DIR}/cmake)
 set(CMAKE_MODULE_PATH ${PROJECT_CMAKE_DIR})
@@ -140,7 +137,7 @@ function(create_module)
         message(SEND_ERROR "Unspecified or unsupported compilation unit type.")
     endif()
 
-    set_target_properties(${CREATE_MODULE_NAME} PROPERTIES PUBLIC_HEADER "${CREATE_MODULE_HEADERS}")
+    set_target_properties(${CREATE_MODULE_NAME} PROPERTIES PUBLIC_HEADER "${CREATE_MODULE_HEADERS}" CXX_STANDARD 11 CXX_STANDARD_REQUIRED ON)
 
     install(TARGETS ${CREATE_MODULE_NAME}
         EXPORT ${CREATE_MODULE_PACKAGE}Targets

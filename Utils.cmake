@@ -14,7 +14,7 @@ elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
     set(PLATFORM_EXTENSION "OSX")
 endif()
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Set up some sane defaults
